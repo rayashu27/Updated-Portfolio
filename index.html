@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Ashutosh Ray – UI/UX Designer with 3 years of experience crafting beautiful, user-centred digital experiences." />
+  <title>Ashutosh Ray — UI/UX Designer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-text">AR</span>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <a href="#hero" class="logo-link">AR<span class="dot">.</span></a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+      <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-text="Work">Work</a></li>
+      <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="mailto:ashutosh.ray@email.com" class="btn-outline">Let's Talk</a>
+    </div>
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Work</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-socials">
+      <a href="https://linkedin.com/in/ashutoshray" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://dribbble.com/ashutoshray" target="_blank" rel="noopener">Dribbble</a>
+      <a href="mailto:ashutosh.ray@email.com">Email</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+      <!-- Animated background grid -->
+      <div class="hero-grid" aria-hidden="true">
+        <div class="grid-dot" style="--d:0.1s;--x:10%;--y:20%"></div>
+        <div class="grid-dot" style="--d:0.4s;--x:80%;--y:15%"></div>
+        <div class="grid-dot" style="--d:0.7s;--x:50%;--y:70%"></div>
+        <div class="grid-dot" style="--d:0.2s;--x:25%;--y:85%"></div>
+        <div class="grid-dot" style="--d:0.9s;--x:70%;--y:50%"></div>
+        <div class="grid-dot" style="--d:0.5s;--x:90%;--y:80%"></div>
+      </div>
+
+      <!-- Spotlight glow follows cursor -->
+      <div class="hero-spotlight" id="hero-spotlight" aria-hidden="true"></div>
+
+      <!-- Floating badge -->
+      <div class="hero-badge" id="hero-badge">
+        <div class="badge-pulse"></div>
+        <span>Available for freelance</span>
+      </div>
+
+      <!-- Hero main text -->
+      <div class="hero-content">
+        <p class="hero-eyebrow" id="hero-eyebrow">UI/UX Designer · 3 Years Experience</p>
+        <h1 class="hero-title" id="hero-title">
+          <span class="title-line" data-line="1">Crafting</span>
+          <span class="title-line" data-line="2">Digital</span>
+          <span class="title-line title-accent" data-line="3">Experiences.</span>
+        </h1>
+        <p class="hero-sub" id="hero-sub">
+          I design products that live at the intersection of <em>form</em> and <em>function</em> —
+          turning complex problems into elegant, intuitive interfaces.
+        </p>
+        <div class="hero-cta-group" id="hero-cta">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#about" class="btn-ghost">About Me ↓</a>
+        </div>
+      </div>
+
+      <!-- Floating cards -->
+      <div class="hero-cards" aria-hidden="true">
+        <div class="float-card card-1">
+          <div class="card-icon">✦</div>
+          <span>Figma Expert</span>
+        </div>
+        <div class="float-card card-2">
+          <div class="card-icon">◈</div>
+          <span>UX Research</span>
+        </div>
+        <div class="float-card card-3">
+          <div class="card-icon">⬡</div>
+          <span>Design Systems</span>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" id="scroll-ind">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE / TICKER ===== -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker">
+        <span>UI Design</span><span class="sep">✦</span>
+        <span>User Research</span><span class="sep">✦</span>
+        <span>Interaction Design</span><span class="sep">✦</span>
+        <span>Prototyping</span><span class="sep">✦</span>
+        <span>Design Systems</span><span class="sep">✦</span>
+        <span>UX Strategy</span><span class="sep">✦</span>
+        <span>Visual Design</span><span class="sep">✦</span>
+        <span>Motion Design</span><span class="sep">✦</span>
+        <!-- Duplicate for seamless loop -->
+        <span>UI Design</span><span class="sep">✦</span>
+        <span>User Research</span><span class="sep">✦</span>
+        <span>Interaction Design</span><span class="sep">✦</span>
+        <span>Prototyping</span><span class="sep">✦</span>
+        <span>Design Systems</span><span class="sep">✦</span>
+        <span>UX Strategy</span><span class="sep">✦</span>
+        <span>Visual Design</span><span class="sep">✦</span>
+        <span>Motion Design</span><span class="sep">✦</span>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-tag">
+          <span class="tag-num">01</span>
+          <span class="tag-line"></span>
+          <span class="tag-title">About Me</span>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: image / avatar area -->
+          <div class="about-visual">
+            <div class="about-avatar-wrap">
+              <div class="about-avatar">
+                <div class="avatar-inner">AR</div>
+              </div>
+              <div class="avatar-ring ring-1"></div>
+              <div class="avatar-ring ring-2"></div>
+            </div>
+            <!-- Stat cards floating around avatar -->
+            <div class="stat-card stat-1">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card stat-2">
+              <span class="stat-num">40+</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat-card stat-3">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+          </div>
+
+          <!-- Right: text content -->
+          <div class="about-text">
+            <h2 class="section-title reveal-text">Hello, I'm<br /><span class="name-highlight">Ashutosh Ray</span></h2>
+            <p class="about-bio reveal-text">
+              I'm a UI/UX designer based in Mumbai, India, with over <strong>3 years of professional experience</strong>
+              building digital products for startups, agencies, and enterprise clients. My passion lies in
+              transforming vague ideas into polished, user-centred solutions.
+            </p>
+            <p class="about-bio reveal-text">
+              From conducting deep user research and building robust design systems to crafting pixel-perfect
+              high-fidelity prototypes — I own the full design lifecycle. I thrive in collaborative,
+              cross-functional teams and love bridging the gap between designers and developers.
+            </p>
+            <div class="about-tags">
+              <span class="tag">Problem Solver</span>
+              <span class="tag">Design Thinker</span>
+              <span class="tag">Detail Obsessed</span>
+              <span class="tag">Mumbai, IN</span>
+            </div>
+            <a href="#contact" class="btn-primary mt-lg">Work With Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills section" id="skills">
+      <div class="container">
+        <div class="section-tag">
+          <span class="tag-num">02</span>
+          <span class="tag-line"></span>
+          <span class="tag-title">Skills & Tools</span>
+        </div>
+
+        <h2 class="section-title reveal-text">Toolkit &amp;<br /><span class="accent">Superpowers</span></h2>
+
+        <div class="skills-grid">
+
+          <!-- Skill category cards -->
+          <div class="skill-card reveal-card">
+            <div class="skill-icon">⬡</div>
+            <h3>UX Research</h3>
+            <p>User interviews, usability testing, heuristic evaluation, journey mapping, affinity mapping.</p>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-w="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="skill-icon">✦</div>
+            <h3>UI Design</h3>
+            <p>High-fidelity mockups, visual hierarchy, colour theory, typography systems, responsive layouts.</p>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-w="95"></div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="skill-icon">◈</div>
+            <h3>Design Systems</h3>
+            <p>Component libraries, token architecture, documentation, version control, accessibility (WCAG).</p>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-w="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="skill-icon">⟡</div>
+            <h3>Prototyping</h3>
+            <p>Interactive flows, micro-animations, advanced Figma prototyping, motion specs for developers.</p>
+            <div class="skill-bar-wrap">
+              <div class="skill-bar" data-w="88"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tool logos row -->
+        <div class="tools-row">
+          <div class="tool-pill reveal-card">Figma</div>
+          <div class="tool-pill reveal-card">Adobe XD</div>
+          <div class="tool-pill reveal-card">Illustrator</div>
+          <div class="tool-pill reveal-card">Photoshop</div>
+          <div class="tool-pill reveal-card">Maze</div>
+          <div class="tool-pill reveal-card">Miro</div>
+          <div class="tool-pill reveal-card">Notion</div>
+          <div class="tool-pill reveal-card">Lottie</div>
+          <div class="tool-pill reveal-card">Framer</div>
+          <div class="tool-pill reveal-card">Webflow</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <div class="section-tag">
+          <span class="tag-num">03</span>
+          <span class="tag-line"></span>
+          <span class="tag-title">Selected Work</span>
+        </div>
+        <h2 class="section-title reveal-text">Projects That<br /><span class="accent">Define Me</span></h2>
+      </div>
+
+      <!-- Horizontal scroll track -->
+      <div class="h-scroll-outer" id="h-scroll-outer">
+        <div class="h-scroll-inner" id="h-scroll-inner">
+
+          <!-- Project Card 1 -->
+          <article class="proj-card" data-index="1" id="proj-1">
+            <div class="proj-thumb" style="background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%)">
+              <div class="proj-thumb-inner">
+                <div class="proj-icon">🎨</div>
+                <div class="proj-mock">
+                  <div class="mock-bar"></div>
+                  <div class="mock-card m1"></div>
+                  <div class="mock-card m2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="proj-info">
+              <span class="proj-tag">Mobile App</span>
+              <h3 class="proj-title">Nomad — Travel Planning App</h3>
+              <p class="proj-desc">End-to-end UX redesign of a travel planning mobile app serving 200k+ users. Reduced
+                booking drop-off by 34% through streamlined flows and delightful micro-interactions.</p>
+              <div class="proj-meta">
+                <span>Figma · Research · Prototyping</span>
+                <span>2024</span>
+              </div>
+              <button class="proj-cta" data-case="1">View Case Study ↗</button>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="proj-card" data-index="2" id="proj-2">
+            <div class="proj-thumb" style="background: linear-gradient(135deg, #059669 0%, #0d9488 100%)">
+              <div class="proj-thumb-inner">
+                <div class="proj-icon">💼</div>
+                <div class="proj-mock">
+                  <div class="mock-bar"></div>
+                  <div class="mock-card m1"></div>
+                  <div class="mock-card m2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="proj-info">
+              <span class="proj-tag">SaaS Dashboard</span>
+              <h3 class="proj-title">Prism — Analytics Dashboard</h3>
+              <p class="proj-desc">Designed a comprehensive analytics dashboard for a B2B SaaS startup. Built a scalable
+                design system with 200+ components. Improved task-completion rate by 41%.</p>
+              <div class="proj-meta">
+                <span>Design System · Dashboard · B2B</span>
+                <span>2024</span>
+              </div>
+              <button class="proj-cta" data-case="2">View Case Study ↗</button>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="proj-card" data-index="3" id="proj-3">
+            <div class="proj-thumb" style="background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%)">
+              <div class="proj-thumb-inner">
+                <div class="proj-icon">🛍️</div>
+                <div class="proj-mock">
+                  <div class="mock-bar"></div>
+                  <div class="mock-card m1"></div>
+                  <div class="mock-card m2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="proj-info">
+              <span class="proj-tag">E-Commerce</span>
+              <h3 class="proj-title">Kreo — Fashion E-Commerce</h3>
+              <p class="proj-desc">Complete UX overhaul of a fashion e-commerce platform. Redesigned the discovery,
+                filtering, and checkout flows resulting in a 28% increase in conversion rate.</p>
+              <div class="proj-meta">
+                <span>E-Commerce · UX Audit · UI Design</span>
+                <span>2023</span>
+              </div>
+              <button class="proj-cta" data-case="3">View Case Study ↗</button>
+            </div>
+          </article>
+
+          <!-- Project Card 4 -->
+          <article class="proj-card" data-index="4" id="proj-4">
+            <div class="proj-thumb" style="background: linear-gradient(135deg, #7c2d12 0%, #b45309 100%)">
+              <div class="proj-thumb-inner">
+                <div class="proj-icon">🏥</div>
+                <div class="proj-mock">
+                  <div class="mock-bar"></div>
+                  <div class="mock-card m1"></div>
+                  <div class="mock-card m2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="proj-info">
+              <span class="proj-tag">HealthTech</span>
+              <h3 class="proj-title">MediSync — Patient App</h3>
+              <p class="proj-desc">Designed a patient-facing healthcare app connecting patients with doctors. Special
+                focus on accessibility (WCAG AA), trust-building UI patterns, and simplified appointment scheduling.</p>
+              <div class="proj-meta">
+                <span>HealthTech · Accessibility · Mobile</span>
+                <span>2023</span>
+              </div>
+              <button class="proj-cta" data-case="4">View Case Study ↗</button>
+            </div>
+          </article>
+
+          <!-- Project Card 5 -->
+          <article class="proj-card" data-index="5" id="proj-5">
+            <div class="proj-thumb" style="background: linear-gradient(135deg, #1e3a5f 0%, #1d4ed8 100%)">
+              <div class="proj-thumb-inner">
+                <div class="proj-icon">🎓</div>
+                <div class="proj-mock">
+                  <div class="mock-bar"></div>
+                  <div class="mock-card m1"></div>
+                  <div class="mock-card m2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="proj-info">
+              <span class="proj-tag">EdTech</span>
+              <h3 class="proj-title">Lumina — Learning Platform</h3>
+              <p class="proj-desc">Led design for an adaptive e-learning platform. Created a gamified learning
+                experience with progress tracking, badges, and peer collaboration tools. 92% learner satisfaction score.
+              </p>
+              <div class="proj-meta">
+                <span>EdTech · Gamification · Web</span>
+                <span>2022</span>
+              </div>
+              <button class="proj-cta" data-case="5">View Case Study ↗</button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+      <!-- Scroll controls moved outside the scrollable track -->
+      <div class="h-scroll-controls">
+        <!-- Drag hint + progress indicator -->
+        <div class="drag-hint" aria-hidden="true">
+          Drag or scroll to explore projects
+        </div>
+        <!-- Project dot indicators -->
+        <div class="proj-nav-dots" id="proj-dots">
+          <button class="proj-dot active" data-idx="0" aria-label="Project 1"></button>
+          <button class="proj-dot" data-idx="1" aria-label="Project 2"></button>
+          <button class="proj-dot" data-idx="2" aria-label="Project 3"></button>
+          <button class="proj-dot" data-idx="3" aria-label="Project 4"></button>
+          <button class="proj-dot" data-idx="4" aria-label="Project 5"></button>
+        </div>
+        <!-- Progress bar -->
+        <div class="h-scroll-progress">
+          <div class="h-scroll-progress-fill" id="h-scroll-fill"></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ===== CASE STUDY MODAL ===== -->
+    <div class="case-modal" id="case-modal" aria-modal="true" role="dialog" aria-hidden="true">
+      <div class="case-modal-inner">
+        <button class="case-close" id="case-close" aria-label="Close case study">✕</button>
+        <div class="case-modal-content" id="case-modal-content">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TESTIMONIALS / PROCESS ===== -->
+    <section class="process section" id="process">
+      <div class="container">
+        <div class="section-tag">
+          <span class="tag-num">04</span>
+          <span class="tag-line"></span>
+          <span class="tag-title">How I Work</span>
+        </div>
+        <h2 class="section-title reveal-text">My Design<br /><span class="accent">Process</span></h2>
+
+        <div class="process-steps">
+          <div class="process-step reveal-card">
+            <div class="step-num">01</div>
+            <h3>Discover</h3>
+            <p>Deep stakeholder interviews, competitive analysis, and user research to understand the real problem.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true">→</div>
+          <div class="process-step reveal-card">
+            <div class="step-num">02</div>
+            <h3>Define</h3>
+            <p>Synthesising findings into personas, journey maps, and a clear problem statement with measurable goals.
+            </p>
+          </div>
+          <div class="process-connector" aria-hidden="true">→</div>
+          <div class="process-step reveal-card">
+            <div class="step-num">03</div>
+            <h3>Design</h3>
+            <p>Ideation, wireframing, and iterative high-fidelity UI design with constant user feedback loops.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true">→</div>
+          <div class="process-step reveal-card">
+            <div class="step-num">04</div>
+            <h3>Deliver</h3>
+            <p>Developer handoff, motion specs, design system documentation, and post-launch monitoring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-tag">
+          <span class="tag-num">05</span>
+          <span class="tag-line"></span>
+          <span class="tag-title">Contact</span>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2 class="section-title reveal-text">Let's Build<br /><span class="accent">Something Great</span></h2>
+            <p class="contact-intro reveal-text">
+              Have a project in mind? I'd love to chat. Whether it's a full product redesign,
+              a new app, or just a consultation — I'm here for it.
+            </p>
+
+            <div class="contact-info">
+              <a href="mailto:ashutosh.ray@email.com" class="cinfo-link">
+                <span class="cinfo-icon">✉</span>
+                <div>
+                  <span class="cinfo-label">Email</span>
+                  <span class="cinfo-val">ashutosh.ray@email.com</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/ashutoshray" target="_blank" rel="noopener" class="cinfo-link">
+                <span class="cinfo-icon">in</span>
+                <div>
+                  <span class="cinfo-label">LinkedIn</span>
+                  <span class="cinfo-val">linkedin.com/in/ashutoshray</span>
+                </div>
+              </a>
+              <a href="https://dribbble.com/ashutoshray" target="_blank" rel="noopener" class="cinfo-link">
+                <span class="cinfo-icon">⛹</span>
+                <div>
+                  <span class="cinfo-label">Dribbble</span>
+                  <span class="cinfo-val">dribbble.com/ashutoshray</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required
+                  autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-send" id="form-submit">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-arrow">→</span>
+              </button>
+              <div class="form-msg" id="form-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">AR<span class="dot">.</span></div>
+      <p class="footer-copy">© 2024 Ashutosh Ray. Designed with care.</p>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/ashutoshray" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://dribbble.com/ashutoshray" target="_blank" rel="noopener">Dribbble</a>
+        <a href="https://behance.net/ashutoshray" target="_blank" rel="noopener">Behance</a>
+        <a href="mailto:ashutosh.ray@email.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
